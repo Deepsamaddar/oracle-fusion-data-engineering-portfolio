@@ -1,0 +1,25 @@
+name: Portfolio checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit and integration tests
+        run: python -m unittest discover -s tests -v
+      - name: Run all three scenarios
+        run: python -m fusion_portfolio.demo --out artifacts/demo --rows 300
+      - name: Verify replay of the complete demo
+        run: python -m fusion_portfolio.demo --out artifacts/demo --rows 300
