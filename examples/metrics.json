@@ -1,0 +1,108 @@
+{
+  "owner": "Deep Samaddar",
+  "data_type": "synthetic",
+  "as_of": "2026-10-23",
+  "rows_per_scenario": 300,
+  "runs": {
+    "apac_procurement": {
+      "initial": {
+        "scenario": "apac_procurement",
+        "batch_hash": "1149d1f8de7bcfb707e9317b828301ce337c74e9e545a9e724f4488565a64ad0",
+        "rows_in": 303,
+        "inserted": 300,
+        "updated": 0,
+        "unchanged": 0,
+        "stale": 0,
+        "quarantined": 3,
+        "replayed": false
+      },
+      "replay_confirmed": true
+    },
+    "emea_payables": {
+      "initial": {
+        "scenario": "emea_payables",
+        "batch_hash": "def6bc2f2372eadd93865ac5deacac52fb8b35e71eb2dd2fc0145efb79b52244",
+        "rows_in": 303,
+        "inserted": 300,
+        "updated": 0,
+        "unchanged": 0,
+        "stale": 0,
+        "quarantined": 3,
+        "replayed": false
+      },
+      "replay_confirmed": true,
+      "incremental": {
+        "scenario": "emea_payables",
+        "batch_hash": "81df45655088c5e6be1b6062e4012e95bc850bef0f94e9e0eb9dd5d077630896",
+        "rows_in": 2,
+        "inserted": 1,
+        "updated": 1,
+        "unchanged": 0,
+        "stale": 0,
+        "quarantined": 0,
+        "replayed": false
+      }
+    },
+    "americas_close": {
+      "initial": {
+        "scenario": "americas_close",
+        "batch_hash": "8da659f6d9d392da5a587fab60caeecd0c3a7fecab2b050f1d185f2dd0d92b58",
+        "rows_in": 303,
+        "inserted": 300,
+        "updated": 0,
+        "unchanged": 0,
+        "stale": 0,
+        "quarantined": 3,
+        "replayed": false
+      },
+      "replay_confirmed": true
+    }
+  },
+  "scenarios": {
+    "apac_procurement": {
+      "records": 300,
+      "exception_records": 113,
+      "open_commitment_by_currency": {
+        "AUD": "1000.00",
+        "INR": "1000.00",
+        "SGD": "1000.00"
+      }
+    },
+    "emea_payables": {
+      "records": 301,
+      "as_of": "2026-10-23",
+      "overdue_records": 229,
+      "aging_by_currency": {
+        "AED": {
+          "1_30": "19500.00",
+          "31_60": "13500.00",
+          "61_90": "12000.00",
+          "90_plus": "12750.00",
+          "not_due": "6750.00",
+          "settled": "0.00"
+        },
+        "EUR": {
+          "1_30": "18000.00",
+          "31_60": "12750.00",
+          "61_90": "13500.00",
+          "90_plus": "12000.00",
+          "not_due": "7500.00",
+          "settled": "0.00"
+        },
+        "GBP": {
+          "1_30": "20250.00",
+          "31_60": "12000.00",
+          "61_90": "13500.00",
+          "90_plus": "12000.00",
+          "not_due": "7000.00",
+          "settled": "0.00"
+        }
+      }
+    },
+    "americas_close": {
+      "records": 300,
+      "journals": 150,
+      "unbalanced_journals": 15
+    }
+  }
+}
